@@ -1,28 +1,32 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+  <v-app class="wrapper">
+    <Skeleton></Skeleton>
+  </v-app>
 </template>
 
-<script>
-import HelloWorld from './components/HelloWorld.vue'
+<script lang="ts">
+import Vue from "vue";
+/* 
+создание и заливка тестовой базы
+import db from "./services/dbGenerator";
+import connector from "./services/connector";
+console.log(db);
+connector.fetch("", {
+  method: "PUT",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify(db),
+}); */
 
-export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
+import Skeleton from "./components/Skeleton.vue";
+export default Vue.extend({
+  name: "App",
+  components: { Skeleton },
+});
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+<style lang="scss">
+.wrapper{
+  max-width: 1000px;
+  margin: auto;
 }
 </style>
